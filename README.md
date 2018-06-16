@@ -1,7 +1,7 @@
 # telegramJesusBot
 HSE Programming course TEAM PROJECT
 Code:
-/Ответ на комманду /start:
+
 	import telegramjesusbot
 
 	TOKEN = "619398055:AAGrNsWoYaV1pCCAblWyETVm-_gPoe7jRzc"
@@ -9,26 +9,23 @@ Code:
 
 	@bot.message_handler(commands=['start'])
 	def start(m):
-		msg = bot.send_message(m.chat.id, 'Привет, странник. Я все думал, когда же ты появишься')
-
-/Создаем меню с кнопками	
-def start(m):
+		msg = bot.send_message(m.chat.id, 'Привет, странник. Я все думал, когда же ты появишься')	
+	def start(m):
 	keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	keyboard.add(*[types.KeyboardButton(name) for name in ['Исповедь', 'Благословение', 'Контакты', 'Восхвалить Бога', 'Нажимать при плохом настроении']])
 
-/Учим бота обрабатывать ответ пользователя
-if m.text == 'Исповедь':
+	if m.text == 'Исповедь':
 	bot.send_message(m.chat.id, 'Покайся в своих грехах', parse_mode='Markdown')
 	keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	keyboard.add(*[types.KeyboardButton(name) for name in ['Пропустил дэдлайн', 'Комиссия впереди', 'Нет накопа', '...']])
-elif m.text == 'Благословение':
+	elif m.text == 'Благословение':
 	bot.send_message(m.chat.id, 'Бог в помощь', parse_mode='Markdown')
-elif m.text == 'Контакты':
+	elif m.text == 'Контакты':
 	bot.send_message(m.chat.id, 'Таир Алескеров - vk.com/tairufff , Третьяков Максим - vk.com/maximtretyakovru, Егор Шишкин - vk.com/shishkin_eg19', parse_mode ='Markdown')
-elif m.text == 'Восхвалить бога':
+	elif m.text == 'Восхвалить бога':
 	bot.send_message(m.chat.id, 'Номер карты (Сбербанк): 5469 3800 7648 6553', parse_mode='Markdown')
-elif m.text == 'Нажимать про плохом настроении':
-{
+	elif m.text == 'Нажимать про плохом настроении':
+	{
 	bot.send_message(m.chat.id, 'Плохое настроение? Мы поможем! Выбери чем себя порадовать!')
 	keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	keyboard.add(*[types.KeyboardButton(name) for name in ['Фильмы', 'Мемы']])
@@ -44,6 +41,6 @@ elif m.text == 'Нажимать про плохом настроении':
 					bot.send_message(m.chat.id,'Комедии 1. 1+1 (2011) kp 8.8 IMDb 8.5 2. Иван Васильевич меняет професию (1973) kp 8.7 IMDb 8.4 3. Жизнь Прекрасна (1997) kp 8.6 IMDb 8.6 4. Достучаться до небес (1997) kp 8.6 IMDb 8 5. Криминальное чтиво (1994) kp 8.6 IMDb 8.9 6. Операция "Ы" и другие приключения Шурика (1965) kp 8.7 IMDb 8.6 7. Назад в будущее (1985) kp 8.6 IMDb 8.5 8. Карты, деньги, два ствола (1998) kp 8.5 IMDb 8.2 9. Бриллиантовая рука (1968) kp 8.5 IMDb 8.5 10. В бой идут одни старики (1973) kp 8.7 IMDb 8.5', parse_mode='Markdown')
 				elif m.text == 'Мультфильмы':
 					bot.send_message(m.chat.id,'1. Король Лев (1994) kp 8.7 IMDb 8.5 2. Тайна Коко (2017) kp 8.6 IMDb 8.5 3. ВАЛЛ И (2008) kp 8.3 IMDb 8.5 4. Как приручить дракона (2010) kp 8.2 IMDb 8.4 5. Зверополис (2016) kp 8.3 IMDb 8.3 6. Красавица и Чудовище (1991) kp 8.2 IMDb 8.2 7. Балто (1995) kp 8.2 IMDb 8 8. Остров собак (2018) kp 8.4 IMDb 8.2 9. Аладдин (1992) kp 8.1 IMDb 8 10. Головоломка (2015) kp 8 IMDb 8.2', parse_mode = 'Markdown')
-}
+	}
 
-bot.polling()
+	bot.polling()
