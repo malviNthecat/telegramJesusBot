@@ -11,12 +11,12 @@ Code:
 	def start(m):
 		msg = bot.send_message(m.chat.id, 'Привет, странник. Я все думал, когда же ты появишься')
 
-//Создаем меню с кнопками	
+/Создаем меню с кнопками	
 def start(m):
 	keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
 	keyboard.add(*[types.KeyboardButton(name) for name in ['Исповедь', 'Благословение', 'Контакты', 'Восхвалить Бога', 'Нажимать при плохом настроении']])
 
-//Учим бота обрабатывать ответ пользователя
+/Учим бота обрабатывать ответ пользователя
 if m.text == 'Исповедь':
 	bot.send_message(m.chat.id, 'Покайся в своих грехах', parse_mode='Markdown')
 	keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
